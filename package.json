@@ -1,0 +1,33 @@
+{
+  "name": "fs-db-final-sprint-sem3",
+  "version": "1.0.0",
+  "description": "This is the final project assigned within Keyin College's Software program in semester 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CJN-Development/FS-DB-Final-Sprint-Sem3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CJN-Development/FS-DB-Final-Sprint-Sem3/issues"
+  },
+  "homepage": "https://github.com/CJN-Development/FS-DB-Final-Sprint-Sem3#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "method-override": "^3.0.0",
+    "mongodb": "^5.2.0",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "pg": "^8.10.0",
+    "uuid": "^9.0.0"
+  }
+}
