@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Search Page</title>
+  </head>
+  <body>
+    <h1>Search Page</h1>
+    <form action="/search/" method="GET">
+      <label for="query">Search term:</label>
+      <input type="text" id="query" name="q" >
+
+      <label for="db">Database Selection</label>
+      <select name="db" id="db">
+          <option value="postgres">Postgres</option>
+          <option value="mongo">Mongo</option>
+
+      </select>
+      <button type="submit">Search</button>
+    </form>
+  </body>
+</html>
