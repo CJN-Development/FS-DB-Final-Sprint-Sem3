@@ -1,26 +1,26 @@
 const express = require("express");
 const router = express.Router();
-const postgresSearch = require('.././services/seachDAL')
+const postgresSearch = require(".././services/seachDAL");
 const mongoSearch = require("../services/mongoSearch");
 
 router.get("/", async (req, res) => {
   let searchDal;
-  if(req.query.db === "postgres"){
-    searchDal = postgresSearch
-  } else if(req.query.db === "mongo") {
-    searchDal = mongoSearch
-    
+  if (req.query.db === "postgres") {
+    searchDal = postgresSearch;
+  } else if (req.query.db === "mongo") {
+    searchDal = mongoSearch;
   } else {
-    searchDal = postgresSearch && mongoSearch
+    searchDal = postgresSearch && mongoSearch;
   }
 
   try {
     let aSearch = await searchDal.searchDatabase(req.query.q, req.query.db);
     console.log(req.query.db);
-    if (aSearch.length === 0) console.log(" Good");
+    if (aSearch.length === 0) console.log("norecord");
     else res.render("searchResult.ejs", { aSearch });
   } catch {
-    console.log("503");
+    res.render("503");
+    myEmitter.emit("log", "Searh", "ERROR", "Search Results has Failed!");
   }
 });
 

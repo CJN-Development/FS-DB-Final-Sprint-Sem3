@@ -29,6 +29,26 @@ app.get("/search", (req, res) => {
   res.render("searchResult", { Database: database, aSearch: searchResults });
 });
 
+// app.use((req, res) => {
+//   myEmitter.emit("log", "404", "ERROR", "Content Is Not Found");
+//   res.status(404).render("404");
+// });
+
+//404 Error Page
+app.get("/404", (request, response) => {
+  response.render("404.ejs");
+});
+
+//503 Error Page
+app.get("/503", (request, response) => {
+  response.render("503.ejs");
+});
+
+//No record Error page
+app.get("/norecord", (request, response) => {
+  response.render("norecord.ejs");
+});
+
 app.listen(PORT, () => {
   console.log(`Simple app running on port ${PORT}.`);
 });
