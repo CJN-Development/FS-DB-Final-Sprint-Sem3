@@ -3,6 +3,14 @@ const router = express.Router();
 const postgresSearch = require(".././services/seachDAL");
 const mongoSearch = require("../services/mongoSearch");
 
+const logEvents = require("../logevents");
+const EventEmitter = require("events");
+class MyEmitter extends EventEmitter {}
+
+const myEmitter = new MyEmitter();
+
+myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg));
+
 router.get("/", async (req, res) => {
   let searchDal;
   if (req.query.db === "postgres") {
@@ -20,7 +28,7 @@ router.get("/", async (req, res) => {
     else res.render("searchResult.ejs", { aSearch });
   } catch {
     res.render("503");
-    myEmitter.emit("log", "Searh", "ERROR", "Search Results has Failed!");
+    myEmitter.emit("log", "aSearch", "ERROR", "Search Results has Failed!");
   }
 });
 
