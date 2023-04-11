@@ -4,13 +4,15 @@
 
     <div class="createcontent2">
       <h2>Search Results For</h2>
-      <% if (aSearch.length > 0) { %>
-        <% aSearch.forEach((result) => { %>
-          <h3><%= result.first_name %> <%= result.last_name %> <%= result.email %> <%= result.semester %> </h3>
-        <% }); %>
-      <% } else { %>
-        <p>No results found.</p>
+      <% if (aSearch.length > 0) { %> <% aSearch.forEach((result) => { %>
+      <h3>
+        <%= result.first_name %> <%= result.last_name %> <%= result.email %> <%=
+        result.semester %>
+      </h3>
+      <% }); %> <% } else { %>
+      <p>No results found.</p>
       <% } %>
     </div>
   </body>
+  <%- include('./partials/foot.ejs') %>
 </html>
