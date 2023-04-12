@@ -1,3 +1,13 @@
-<%- include('./partials/nav.ejs') %>
-<h1>INDEX</h1>
-<h3>Hello <%= name %></h3>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    <body>
+        <%- include('./partials/nav.ejs') %>
+        <div class="content">
+            <h2>Welcome <%=name%></h2>
+        </div>
+        </br>
+       
+        <%- include('./partials/logout') %>
+    </body>
+    <%- include('./partials/foot.ejs') %>
+</html>

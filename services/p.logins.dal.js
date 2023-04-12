@@ -9,6 +9,17 @@ async function getLogins() {
     console.log(error);
   }
 }
+
+async function getLoginByUsername(username) {
+  let SQL = `SELECT * FROM public."Logins" WHERE username = $1`;
+  try {
+    let results = await dal.query(SQL, [username]);
+    return results.rows[0];
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 async function getLoginByEmail(email) {
   let SQL = `SELECT id AS _id, username, password, email, uuid FROM public."Logins" WHERE email = $1`;
   try {
@@ -40,6 +51,7 @@ async function addLogin(name, email, password, uuidv4) {
 
 module.exports = {
   getLogins,
+  getLoginByUsername,
   addLogin,
   getLoginByEmail,
   getLoginById,
