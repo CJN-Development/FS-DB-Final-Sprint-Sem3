@@ -3,7 +3,7 @@ const bcrypt = require("bcrypt");
 const uuid = require("uuid");
 const router = express.Router();
 
-const { addLogin, getLoginByUsername } = require("../services/p.auth.dal");
+const { addLogin } = require("../services/p.logins.dal");
 // const { addLogin, getLoginByUsername } = require('../services/m.auth.dal')
 
 router.use(express.static("public"));
@@ -78,11 +78,11 @@ router.post("/new", async (req, res) => {
   }
 });
 
-router.get("/exit", async (req, res) => {
-  if (DEBUG) console.log("get /exit");
+router.get("/logout", async (req, res) => {
+  if (DEBUG) console.log("get /Logout");
   // clear out the express-session
   req.app.locals.status = " ";
-  res.redirect("/");
+  res.redirect("/login");
 });
 
 module.exports = router;
