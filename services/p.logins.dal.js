@@ -1,4 +1,4 @@
-const dal = require("./p.db");
+const dal = require("./auth_PG_DB");
 
 async function getLogins() {
   let SQL = `SELECT id AS _id, username, password, email, uuid FROM public."Logins"`;
