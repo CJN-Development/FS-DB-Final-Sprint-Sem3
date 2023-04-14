@@ -1,7 +1,7 @@
-<html lang="en">
+<html>
+  <%- include('./partials/head') %>
   <body>
-    <% include('./partials/nav.ejs') %>
-
+    <%- include('./partials/nav.ejs') %>
     <div class="createcontent2">
       <h2>Search Results For</h2>
       <% if (aSearch.length > 0) { %> <% aSearch.forEach((result) => { %>

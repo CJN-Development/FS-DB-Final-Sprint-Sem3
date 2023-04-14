@@ -1,22 +1,21 @@
 <html>
-  <head>
-    <title>Search Page</title>
-  </head>
   <body>
-    <%- include('./partials/nav.ejs') %>
-    <h1>Search Page</h1>
-    <form action="/search/" method="GET">
-      <label for="query">Search term:</label>
-      <input type="text" id="query" name="q" />
+    <%- include('./partials/head') %> <%- include('./partials/nav.ejs') %>
+    <div class="searchpage">
+      <h1>Search Page</h1>
+      <form action="/search/" method="GET">
+        <label for="query">Search term:</label>
+        <input type="text" id="query" name="q" />
 
-      <label for="db">Database Selection</label>
-      <select name="db" id="db">
-        <option value="postgres">Postgres</option>
-        <option value="mongo">Mongo</option>
-        <option value="both">Both</option>
-      </select>
-      <button type="submit">Search</button>
-    </form>
+        <label for="db">Database Selection</label>
+        <select name="db" id="db">
+          <option value="postgres">Postgres</option>
+          <option value="mongo">Mongo</option>
+          <option value="both">Both</option>
+        </select>
+        <button type="submit">Search</button>
+      </form>
+    </div>
   </body>
   <%- include('./partials/foot.ejs') %>
 </html>
