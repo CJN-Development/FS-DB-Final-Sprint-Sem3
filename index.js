@@ -108,6 +108,12 @@ app.post(
     failureFlash: true,
   })
 );
+
+app.get("/about", (req, res) => {
+
+   res.render("about.ejs");
+  
+  });
 app.get("/register", checkNotAuthenticated, (req, res) => {
   res.render("register.ejs");
 });
