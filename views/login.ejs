@@ -1,7 +1,8 @@
 <%- include('./partials/head.ejs') %>
 <%- include('./partials/nav.ejs') %>
 <section class="loginPage">
-    <h1 class="loginH1">Login</h1>
+    <div class="login">
+        <h1 class="loginH1">Login</h1>
 <% if (messages.error) { %>
     <%= messages.error %>
 <% } %>
@@ -14,8 +15,11 @@
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
     </div>
-    <button type="submit">Login</button>
+    <button  class="raise" type="submit">Login</button>
 </form>
 <a href="/register">Register</a>
 
+
+    </div>
+    
 </section>
