@@ -1,1 +1,36 @@
-
+<html lang="en">
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="content">
+      <h2>About page</h2>
+      <br />
+      <p class="aboutText">
+        Welcome to the Keyin Student Database about page! <br />
+        <br />
+        This site was created to search for students through a Mongo and/or
+        pgAdmin database. When a user uses the search feature, data will appear
+        with the students first name, email, and the semester they are currently
+        enrolled in.
+        <br /><br />
+        This site was made for our final sprint in Full Stack JavaScript and
+        Database Programming and Data Processing.
+        <br />
+        <br />
+      </p>
+      <div class="GHubLink">
+        <h2>Created by:</h2>
+        <a class="GitHubLink" href="https://github.com/JKells99"
+          >Jordan Kelloway</a
+        >
+        <a class="GitHubLink" href="https://github.com/CamDamico"
+          >Cameron D'Amico</a
+        >
+        <a class="GitHubLink" href="https://github.com/Greenenathan"
+          >Nathan Greene</a
+        >
+      </div>
+    </div>
+  </body>
+  <%- include('./partials/foot') %>
+</html>
