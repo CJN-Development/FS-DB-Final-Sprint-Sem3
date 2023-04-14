@@ -11,19 +11,18 @@ const myEmitter = new MyEmitter();
 
 myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg));
 
-class CombinedSearch{
-  constructor(postgresSearch,mongoSearch){
+class CombinedSearch {
+  constructor(postgresSearch, mongoSearch) {
     this.postgresSearch = postgresSearch;
     this.mongoSearch = mongoSearch;
   }
 
-  async searchDatabase(query,db){
+  async searchDatabase(query, db) {
     const results = await Promise.all([
-      this.postgresSearch.searchDatabase(query,db),
-      this.mongoSearch.searchDatabase(query,db)
-
+      this.postgresSearch.searchDatabase(query, db),
+      this.mongoSearch.searchDatabase(query, db),
     ]);
-    return results.flat()
+    return results.flat();
   }
 }
 
@@ -34,15 +33,22 @@ router.get("/", async (req, res) => {
   } else if (req.query.db === "mongo") {
     searchDal = mongoSearch;
   } else {
-    searchDal = new CombinedSearch(postgresSearch,mongoSearch)
+    searchDal = new CombinedSearch(postgresSearch, mongoSearch);
   }
 
   try {
     let aSearch = await searchDal.searchDatabase(req.query.q, req.query.db);
-    console.log(req.query.db);
-    if (aSearch.length === 0){
-      res.render('norecord')
+
+    if (aSearch.length === 0) {
+      res.render("norecord");
     } else res.render("searchResult.ejs", { aSearch });
+    myEmitter.emit(
+      "log",
+      "aSearch",
+      "INFO",
+      `User ${req.user.username} has searched ${req.query.q}`,
+      "Search Successfull!"
+    );
   } catch {
     res.render("503");
     myEmitter.emit("log", "aSearch", "ERROR", "Search Results has Failed!");
