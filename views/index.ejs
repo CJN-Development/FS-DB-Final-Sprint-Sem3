@@ -1,13 +1,12 @@
 <html lang="en">
-    <%- include('./partials/head.ejs') %>
-    <body>
-        <%- include('./partials/nav.ejs') %>
-        <div class="content">
-            <h2>Welcome <%=name%></h2>
-        </div>
-        </br>
-       
-        <%- include('./partials/logout') %>
-    </body>
-    <%- include('./partials/foot.ejs') %>
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="content">
+      <h2>Welcome <%=name%></h2>
+      <br />
+      <div class="logout"><%- include('./partials/logout') %></div>
+    </div>
+  </body>
+  <%- include('./partials/foot.ejs') %>
 </html>

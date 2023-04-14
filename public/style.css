@@ -9,7 +9,7 @@
 
 .loginPage {
   text-align: center;
-  height: 100vh;
+  height: 90%;
 
   padding-top: 300px;
   background: linear-gradient(
@@ -118,6 +118,20 @@ nav .links {
   border-radius: 40px;
 }
 
+.nameInput {
+  font-size: 1.3rem;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1em;
+  align-content: center;
+  font-weight: bolder;
+}
+
+.nameInput input {
+  padding: 0.3rem;
+  border-radius: 40px;
+}
+
 .loginForm {
   padding: 1.5rem;
 }
@@ -142,7 +156,7 @@ nav .links {
 
   justify-content: center;
   align-content: center;
-  height: 40vh;
+  height: 45vh;
 }
 
 .loginForm button:hover {
@@ -203,4 +217,40 @@ nav .links {
   text-decoration: underline;
   font-weight: bolder;
   font-size: 20px;
+}
+
+.logout {
+  display: flex;
+  justify-content: center;
+}
+
+.logoutButton {
+  margin-top: 3vh;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.logoutButton:hover {
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #4481eb,
+    #04befe,
+    #3f86ed
+  );
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+  cursor: pointer;
+}
+
+footer {
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+  background-color: #37b1d2;
+  border-top: 2px solid black;
+  font-size: 18px;
+}
+
+.searchpage {
+  height: 90%;
 }
