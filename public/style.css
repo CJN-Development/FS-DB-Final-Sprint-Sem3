@@ -53,7 +53,7 @@
   background-position: 0 0, 49px 49px;
 }
 
-.loginH1{
+.loginH1 {
   font-size: 2em;
 }
 .loginPage a {
@@ -142,7 +142,7 @@ nav .links {
 
   justify-content: center;
   align-content: center;
-  height: 45vh;
+  height: 55vh;
 }
 
 .loginForm button:hover {
@@ -171,9 +171,6 @@ nav .links {
 }
 
 .content p {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   padding-left: 50px;
   padding-right: 50px;
   font-size: 18.5px;
@@ -241,6 +238,11 @@ footer {
   height: 90%;
 }
 
-.createcontent2{
+.createcontent2 {
   background-color: #04befe;
+}
+
+.aboutText {
+  display: flex;
+  justify-content: center;
 }
