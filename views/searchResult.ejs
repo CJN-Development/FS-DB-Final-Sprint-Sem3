@@ -1,12 +1,17 @@
 <html>
-  <%- include('./partials/head') %>
+  <style>
+    .createContent2{
+      background-color: #04befe
+    }
+  </style>
+  <!-- <%- include('./partials/head.ejs') %> -->
   <body>
     <%- include('./partials/nav.ejs') %>
     <div class="createcontent2">
       <h2>Search Results For</h2>
       <% if (aSearch.length > 0) { %> <% aSearch.forEach((result) => { %>
       <h3>
-        <%= result.first_name %> <%= result.last_name %> <%= result.email %> <%=
+        <%="-" + result.first_name %> <%= result.last_name %> <%= result.email %> <%=
         result.semester %>
       </h3>
       <% }); %> <% } else { %>
