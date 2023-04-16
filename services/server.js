@@ -65,9 +65,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride("_method"));
 
-// Passport checkAuthenticated() middleware.
-// For every route we check the person is logged in. If not we send them
-// to the login page
+
 app.get("/", checkAuthenticated, (req, res) => {
   res.render("index.ejs", { name: req.user.username });
 });
@@ -78,9 +76,7 @@ app.get("/sample1", checkAuthenticated, (req, res) => {
 app.get("/sample2", checkAuthenticated, (req, res) => {
   res.render("sample.two.ejs");
 });
-// Passport checkNotAuthenticated() middleware.
-// This middleware is only for the login and register. If someone stumbles
-// upon these routes they only need access if they are NOT authenticated.
+
 app.get("/login", checkNotAuthenticated, (req, res) => {
   res.render("login.ejs");
 });
