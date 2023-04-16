@@ -97,7 +97,9 @@
 
       justify-content: center;
       align-content: center;
-      height: 45vh;
+      height: 50vh;
+      max-height: 400vh;
+      overflow: auto;
     }
 
     footer {
@@ -118,7 +120,7 @@
         <% if (aSearch.length > 0) { %> <% aSearch.forEach((result) => { %>
         <h3>
           <%="-" + result.first_name %> <%= result.last_name %> <%= result.email
-          %> <%= result.semester %>
+          %> <%= result.semester %> <br> <br>
         </h3>
         <% }); %> <% } else { %>
         <p>No results found.</p>
