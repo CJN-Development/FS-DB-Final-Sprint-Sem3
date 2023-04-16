@@ -1,22 +1,129 @@
 <html>
   <style>
-    .createContent2{
-      background-color: #04befe
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .searchresults {
+      text-align: center;
+      height: 90%;
+
+      padding-top: 200px;
+      background: linear-gradient(
+          45deg,
+          #0000 calc(25% / 3),
+          #37b1d2 0 calc(50% / 3),
+          #0000 0 calc(250% / 3),
+          #37b1d2 0 calc(275% / 3),
+          #0000 0
+        ),
+        linear-gradient(
+          45deg,
+          #37b1d2 calc(25% / 3),
+          #0000 0 calc(50% / 3),
+          #37b1d2 0 25%,
+          #0000 0 75%,
+          #37b1d2 0 calc(250% / 3),
+          #0000 0 calc(275% / 3),
+          #37b1d2 0
+        ),
+        linear-gradient(
+          -45deg,
+          #0000 calc(25% / 3),
+          #37b1d2 0 calc(50% / 3),
+          #0000 0 calc(250% / 3),
+          #37b1d2 0 calc(275% / 3),
+          #0000 0
+        ),
+        linear-gradient(
+            -45deg,
+            #37b1d2 calc(25% / 3),
+            #0000 0 calc(50% / 3),
+            #37b1d2 0 25%,
+            #0000 0 75%,
+            #37b1d2 0 calc(250% / 3),
+            #0000 0 calc(275% / 3),
+            #37b1d2 0
+          )
+          #d3dfe2;
+      background-size: 98px 98px;
+      background-position: 0 0, 49px 49px;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      gap: 20px;
+      background-color: #37b1d2;
+      height: 60px;
+      border-bottom: 2px solid black;
+      justify-content: space-between;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    nav a {
+      color: black;
+      font-weight: bolder;
+      font-size: 1.1rem;
+      text-decoration: none;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.42);
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    nav .links {
+      display: flex;
+      gap: 30px;
+      text-decoration: none;
+    }
+
+    .searchresults1 {
+      margin-left: 100px;
+      margin-right: 100px;
+      border-radius: 40px;
+      border: 2px solid black;
+      background-color: #37b1d2;
+
+      padding: 40px;
+
+      justify-content: center;
+      align-content: center;
+      height: 45vh;
+    }
+
+    footer {
+      display: flex;
+      justify-content: right;
+      padding-right: 10px;
+      background-color: #37b1d2;
+      border-top: 2px solid black;
+      font-size: 18px;
     }
   </style>
-  <!-- <%- include('./partials/head.ejs') %> -->
-  <body>
-    <%- include('./partials/nav.ejs') %>
-    <div class="createcontent2">
-      <h2>Search Results For</h2>
-      <% if (aSearch.length > 0) { %> <% aSearch.forEach((result) => { %>
-      <h3>
-        <%="-" + result.first_name %> <%= result.last_name %> <%= result.email %> <%=
-        result.semester %>
-      </h3>
-      <% }); %> <% } else { %>
-      <p>No results found.</p>
-      <% } %>
+  <body class="test">
+    <%- include('./partials/head.ejs') %><%- include('./partials/nav.ejs') %>
+    <div class="searchresults">
+      <div class="searchresults1">
+        <h2>Search Results:</h2>
+        <br />
+        <% if (aSearch.length > 0) { %> <% aSearch.forEach((result) => { %>
+        <h3>
+          <%="-" + result.first_name %> <%= result.last_name %> <%= result.email
+          %> <%= result.semester %>
+        </h3>
+        <% }); %> <% } else { %>
+        <p>No results found.</p>
+        <% } %>
+      </div>
     </div>
   </body>
   <%- include('./partials/foot.ejs') %>

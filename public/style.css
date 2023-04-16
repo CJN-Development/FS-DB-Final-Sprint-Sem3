@@ -7,7 +7,8 @@
   font-family: "Poppins", sans-serif;
 }
 
-.loginPage {
+.loginPage,
+.searchpage {
   text-align: center;
   height: 90%;
 
@@ -107,7 +108,8 @@ nav .links {
 
 .emailInput input,
 .passwordInput input,
-.nameInput input {
+.nameInput input,
+.searchinput input {
   width: 100%;
   max-width: 350px;
   padding: 0.5em;
@@ -131,7 +133,8 @@ nav .links {
   background-color: #04befe;
 }
 
-.Login {
+.Login,
+.searchpage1 {
   margin-left: 100px;
   margin-right: 100px;
   border-radius: 40px;
@@ -213,7 +216,8 @@ nav .links {
   border-radius: 50px;
 }
 
-.logoutButton:hover {
+.logoutButton:hover,
+.submit1:hover {
   background-image: linear-gradient(
     to right,
     #25aae1,
