@@ -246,3 +246,9 @@ footer {
   display: flex;
   justify-content: center;
 }
+
+.stepbystep {
+  display: flex;
+  justify-content: left;
+  padding-bottom: 10px;
+}
