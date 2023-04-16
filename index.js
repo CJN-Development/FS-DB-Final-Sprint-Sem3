@@ -156,8 +156,9 @@ function checkNotAuthenticated(req, res, next) {
 }
 
 app.use((req, res) => {
-  myEmitter.emit("log", "404", "ERROR", "Content is not Found");
+  
   res.status(404).render("404");
+  
 });
 
 //404 Error Page

@@ -9,21 +9,6 @@ const myEmitter = new MyEmitter();
 
 myEmitter.on("log", (event, level, msg) => logEvents(event, level, msg));
 
-// async function searchDatabase(keyword, database) {
-//     dal.connect()
-//   };
-
-//   async function searchDatabase(keyword) {
-//     if(DEBUG) console.log("actors.mongo.dal.getActorByActorId()");
-//     try {
-//       await dal.connect();
-//       const result = dal.db("Sprint2").collection("students").find(keyword);
-//       return result;
-//     } catch(error) {
-//       console.log(error);
-//     }
-//   };
-
 async function searchDatabase(keyword) {
   if (DEBUG) console.log("searchDatabase()");
   try {
@@ -34,11 +19,21 @@ async function searchDatabase(keyword) {
       "searchDatabase was Successful!(MongoDB)!"
     );
     await dal.connect();
-
+    const query = {
+      $or: [
+        { id: { $regex: keyword, $options: 'i' } },
+        { first_name: { $regex: keyword, $options: 'i' } },
+        { last_name: { $regex: keyword, $options: 'i' } },
+        { email: { $regex: keyword, $options: 'i' } },
+        { gender: { $regex: keyword, $options: 'i' } },
+        { age: { $regex: keyword, $options: 'i' } },
+        { semester: { $regex: keyword, $options: 'i' } }
+      ]
+    };
     const result = await dal
       .db("Sprint2")
       .collection("students")
-      .find({ $text: { $search: keyword } });
+      .find(query);
     return result.toArray();
   } catch (error) {
     myEmitter.emit(
