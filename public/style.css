@@ -256,3 +256,49 @@ footer {
   justify-content: left;
   padding-bottom: 10px;
 }
+
+.createcontent3 {
+  background: linear-gradient(
+      45deg,
+      #0000 calc(25% / 3),
+      #37b1d2 0 calc(50% / 3),
+      #0000 0 calc(250% / 3),
+      #37b1d2 0 calc(275% / 3),
+      #0000 0
+    ),
+    linear-gradient(
+      45deg,
+      #37b1d2 calc(25% / 3),
+      #0000 0 calc(50% / 3),
+      #37b1d2 0 25%,
+      #0000 0 75%,
+      #37b1d2 0 calc(250% / 3),
+      #0000 0 calc(275% / 3),
+      #37b1d2 0
+    ),
+    linear-gradient(
+      -45deg,
+      #0000 calc(25% / 3),
+      #37b1d2 0 calc(50% / 3),
+      #0000 0 calc(250% / 3),
+      #37b1d2 0 calc(275% / 3),
+      #0000 0
+    ),
+    linear-gradient(
+        -45deg,
+        #37b1d2 calc(25% / 3),
+        #0000 0 calc(50% / 3),
+        #37b1d2 0 25%,
+        #0000 0 75%,
+        #37b1d2 0 calc(250% / 3),
+        #0000 0 calc(275% / 3),
+        #37b1d2 0
+      )
+      #d3dfe2;
+  background-size: 98px 98px;
+  background-position: 0 0, 49px 49px;
+}
+
+.text1 {
+  margin-bottom: 50%;
+}
