@@ -244,6 +244,13 @@ footer {
 
 .createcontent2 {
   background-color: #04befe;
+  height: 90%;
+}
+
+.createcontent2 h2 {
+  display: flex;
+  justify-content: center;
+  padding-top: 10vh;
 }
 
 .aboutText {
